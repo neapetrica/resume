@@ -14,10 +14,13 @@ document.querySelector(".check").addEventListener("click", function () {
   if (!guess) {
     displayMessage("No number");
   } else if (guess === number) {
-    displayMessage("Corect number");
-    document.backgroundSection.style.background = "green";
-    document.querySelector(".number").style.width = "30rem";
+    displayMessage("Correct number!");
+    document.querySelector(".backgroundSection").style.background = "green";
+    document.querySelector(".number").style.width = "15rem";
     document.querySelector(".number").textContent = number;
+    document.querySelector(".guessTitle").textContent = "You guessed it!";
+    document.querySelector(".guessTitle").style.color = "green";
+    document.querySelector(".guess").style.borderColor = "#eee";
     if (score > highScore) {
       highScore = score;
       document.querySelector(".highscore").textContent = highScore;
@@ -29,6 +32,7 @@ document.querySelector(".check").addEventListener("click", function () {
         guess > number ? "Too High" : "Too Low";
       score--;
       document.querySelector(".score").textContent = score;
+      document.querySelector(".guess").style.borderColor = "red";
     } else {
       displayMessage("You Lost");
       document.querySelector(".score").textContent = 0;
@@ -43,6 +47,9 @@ document.querySelector(".again").addEventListener("click", function () {
   document.querySelector(".score").textContent = score;
   document.querySelector(".number").textContent = "?";
   document.querySelector(".guess").value = "";
-  document.backgroundSection.style.background = "#222";
-  document.querySelector(".number").style.width = "15rem";
+  document.querySelector(".backgroundSection").style.background = "#f1f7f7";
+  document.querySelector(".number").style.width = "8rem";
+  document.querySelector(".guessTitle").textContent = "Guess my number!";
+  document.querySelector(".guessTitle").style.color = "black";
+  document.querySelector(".guess").style.borderColor = "#eee";
 });
