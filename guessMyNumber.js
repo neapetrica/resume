@@ -1,3 +1,12 @@
+"use strict";
+// console.log(document.querySelector('.message').textContent);
+// document.querySelector('.message').textContent = 'Correct Number';
+// document.querySelector('.number').textContent = 13;
+// document.querySelector('.score').textContent = 28;
+
+// document.querySelector('.guess').value = 23;
+// console.log(document.querySelector('.guess').value);
+
 let number = Math.trunc(Math.random() * 20) + 1;
 
 let score = 20;
@@ -14,13 +23,10 @@ document.querySelector(".check").addEventListener("click", function () {
   if (!guess) {
     displayMessage("No number");
   } else if (guess === number) {
-    displayMessage("Correct number!");
-    document.querySelector(".backgroundSection").style.background = "green";
-    document.querySelector(".number").style.width = "15rem";
+    displayMessage("Corect number");
+    document.querySelector(".container").style.background = "green";
+    document.querySelector(".number").style.width = "30rem";
     document.querySelector(".number").textContent = number;
-    document.querySelector(".guessTitle").textContent = "You guessed it!";
-    document.querySelector(".guessTitle").style.color = "green";
-    document.querySelector(".guess").style.borderColor = "#eee";
     if (score > highScore) {
       highScore = score;
       document.querySelector(".highscore").textContent = highScore;
@@ -31,11 +37,10 @@ document.querySelector(".check").addEventListener("click", function () {
       document.querySelector(".message").textContent =
         guess > number ? "Too High" : "Too Low";
       score--;
-      document.querySelector(".scoreD").textContent = score;
-      document.querySelector(".guess").style.borderColor = "red";
+      document.querySelector(".score").textContent = score;
     } else {
       displayMessage("You Lost");
-      document.querySelector(".scoreD").textContent = 0;
+      document.querySelector(".score").textContent = 0;
     }
   }
 });
@@ -44,12 +49,9 @@ document.querySelector(".again").addEventListener("click", function () {
   score = 20;
   number = Math.trunc(Math.random() * 20) + 1;
   displayMessage("Start guessing...");
-  document.querySelector(".scoreD").textContent = score;
+  document.querySelector(".score").textContent = score;
   document.querySelector(".number").textContent = "?";
   document.querySelector(".guess").value = "";
-  document.querySelector(".backgroundSection").style.background = "#f1f7f7";
-  document.querySelector(".number").style.width = "8rem";
-  document.querySelector(".guessTitle").textContent = "Guess my number!";
-  document.querySelector(".guessTitle").style.color = "black";
-  document.querySelector(".guess").style.borderColor = "#eee";
+  document.querySelector(".container").style.background = "#222";
+  document.querySelector(".number").style.width = "15rem";
 });

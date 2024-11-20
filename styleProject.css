@@ -2,61 +2,25 @@
 
 .projects-section {
   display: flex;
-  justify-content: center;
-  margin: 15px;
+  justify-content: space-around;
+  padding: 5px;
+  margin: 10px;
+  max-width: 1200px;
+  height: auto;
+  margin: auto;
+}
+
+.container-project {
+  margin: 10px;
 }
 .title-space {
   display: block;
   justify-content: center;
   margin: 15px;
 }
-.message {
-  font-size: 30px;
-  text-align: center;
-}
-.number {
-  background: #eee;
-  color: #333;
-  font-size: 6rem;
-  width: 8rem;
-  text-align: center;
-}
-.right {
+
+.description {
   display: flex;
   justify-content: space-around;
-}
-.between {
-  font-size: 1.4rem;
-  position: absolute;
-}
-
-.guess {
-  background: none;
-  border: 4px solid #eee;
-  font-family: inherit;
-  color: inherit;
-  font-size: 5rem;
-  padding: 2.5rem;
-  width: 25rem;
-  text-align: center;
-  display: block;
-  margin-bottom: 3rem;
-}
-
-.btn {
-  border: none;
-  background-color: #eee;
-  color: #222;
-  font-size: 2rem;
-  font-family: inherit;
-  padding: 2rem 3rem;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background-color: #ccc;
-}
-
-.label-score {
-  margin-bottom: 2rem;
+  border-left: 1px solid rgb(255, 255, 255);
 }
